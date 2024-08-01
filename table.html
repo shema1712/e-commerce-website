@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="container">
+            <!-- navbar -->
+    <div class="navbar">
+      <div class="navbar-left">
+        <h1>E-Commerce Website</h1>
+      </div>
+      <div class="navbar-right">
+        <a href="index.html">Home</a>
+        <a href="profile.html">Profile</a>
+        <a href="user.html">User</a>
+        <a href="product.html">Products</a>
+        <a href="cart.html">Cart</a>
+        <a href="#"><button id="navbar-rightbtn">Logout</button></a>
+      </div>
+    </div>
+    <div class="table-container">
+        <form action=" ">
+          <input onclick="myFun()"   type="radio" name="Gender" id="All" value="All"/>
+          <label for="All">All</label>
+          <input onclick="myFun()" type="radio" name="Gender" id="male" value="male" />
+          <label for="Male">Male</label>
+          <input onclick="myFun()" type="radio" name="Gender"  id="Female" value="Female"/>
+          <label for="Female">Female</label>
+        </form>
+        <table >
+            <tr>
+                <th>IMAGE</th>
+                <th>NAME</th>
+                <th>GENDER</th>
+                <th>EMAIL</th>
+                <th>DETAIL</th>
+            </tr>
+            <tr class="row male">
+               <td>
+                <img src="images/stephen.webp" height=" 150px" width="150px"/>
+               </td>
+               <td>Stefen</td>
+               <td>Male</td>
+               <td>Stefen.12@Gmail.com</td>
+               <td><button id="table-btn">Details</button> </td>
+            </tr>
+            <tr class="row Female">
+                <td>
+                    <img src="images/jenny.jpeg" height=" 150px" width="150px"/>
+                   </td>
+                   <td>Jenny</td>
+                   <td>Female</td>
+                   <td>Jenny.56@Gmail.com</td>
+                   <td><button id="table-btn">Details</button> </td>
+            </tr>
+            <tr class="row male">
+                <td>
+                    <img src="images/john.jpeg" height=" 150px" width="150px"/>
+                   </td>
+                   <td>John</td>
+                   <td>Male</td>
+                   <td>John.34@Gmail.com</td>
+                   <td><button id="table-btn">Details</button> </td>
+            </tr>
+            <tr class="row male">
+                <td>
+                    <img src="images/stephen.webp" height=" 150px" width="150px"/>
+                   </td>
+                   <td>Kannan</td>
+                   <td>Male</td>
+                   <td>Kannan.Kumar@Gmail.com</td>
+                   <td><button id="table-btn">Details</button> </td>
+            </tr>
+            <tr class="row Female">
+                <td>
+                    <img src="images/keethy.jpeg" height=" 150px" width="150px"/>
+                   </td>
+                   <td>keerthy</td>
+                   <td>Female</td>
+                   <td>Keerthy.raj@Gmail.com</td>
+                   <td><button id="table-btn">Details</button> </td>
+            </tr>
+            
+        </table>
+
+      </div>
+  
+    
+    <!-- footer -->
+    <div class="footer">
+        <h1>Footer Component</h1><br><br>
+       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ut dolore eaque accusamus qui aliquid quae quasi nobis, mollitia autem? Exercitationem inventore earum architecto illum ipsam tempore, veritatis voluptates vero quam rerum nostrum deserunt rem ab quidem dolorum accusantium ut dolore quia eveniet id aperiam corporis totam quasi! Architecto nostrum sed nisi libero doloremque! Illo culpa voluptate nihil neque voluptatum. Recusandae neque tempore non nostrum, nulla culpa eligendi nisi vel, earum commodi soluta magnam, quod adipisci modi qui. Optio, amet? Ratione possimus necessitatibus, odio sint neque quo cumque eum! Sint dolore nisi odit nihil omnis molestiae blanditiis dolorem iste explicabo.</p><br><br>
+      <p >All Copy Right <span>&#169</span>Are Reseved by Hemalatha </p>
+      </div>
+    </div>
+    <script>
+        
+        function myFun() {
+        const radios = document.getElementsByName("Gender");
+        let selectedValue;
+        for (const radio of radios) {
+          if (radio.checked) {
+            selectedValue = radio.value;
+            break;
+          }
+        }
+        console.log("Selected gender:", selectedValue);
+
+        const rows = document.querySelectorAll(".row");
+        for (const row of rows) {
+          if (selectedValue === "All" || row.classList.contains(selectedValue)) {
+            row.style.display = "";
+          } else {
+            row.style.display = "none";
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
